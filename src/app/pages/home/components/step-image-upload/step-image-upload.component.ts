@@ -8,13 +8,22 @@ import { StepperFormHandlerService } from '../../services';
   styleUrls: ['./step-image-upload.component.scss']
 })
 export class StepImageUploadComponent  implements OnInit {
-  @Input() form?:FormGroup
-  constructor(
-    private stepperFormHandler: StepperFormHandlerService
-  ) {
-  }
-  ngOnInit(): void {
+  @Input() form!:FormGroup
+  externalFiles:File[]=[];
+  constructor() {}
 
+  ngOnInit(): void {
+   this.addFileToUploader();
+  }
+  addFileToUploader(){
+    if(this.form.get('image')?.value) {
+      this.externalFiles.push(this.form.get('image')?.value);
+      }
+  }
+
+  myUploader(event:any){
+    console.log( event);
+    this.form?.get('image')?.setValue(event.files[0])
   }
 
 

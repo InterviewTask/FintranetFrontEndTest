@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit,OnDestroy {
   }
   ngOnInit(): void {
     this.subscription.push(this.getSteperFormActiveIndex())
+    this.createForm();
   }
   nextStep(){
     this.stepperFormHandler.next();

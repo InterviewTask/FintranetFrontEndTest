@@ -1,1 +1,13 @@
-<p>step-image-upload works!</p>
+<form [formGroup]="form">
+<p-fileUpload
+[files]="externalFiles"
+name="imageUploader"
+[previewWidth]="80"
+(uploadHandler)="myUploader($event)"
+[customUpload]="true"
+[multiple]="false"
+accept="image/*"
+[maxFileSize]="5*1000*1000"
+>
+</p-fileUpload>
+</form>
