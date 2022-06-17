@@ -1,1 +1,20 @@
 <p-steps [model]="stepsModel" [activeIndex]="activeIndex"></p-steps>
+<ng-container [ngSwitch]="activeIndex">
+  <div *ngSwitchCase="0">
+    <app-step-image-upload [form]="form" ></app-step-image-upload>
+  </div>
+  <div *ngSwitchCase="1">
+    <app-step-from-info [form]="form"></app-step-from-info>
+  </div>
+  <div *ngSwitchCase="2">
+    <app-step-table [form]="form"></app-step-table>
+  </div>
+  <div *ngSwitchCase="3">
+    <app-step-from-result [form]="form"></app-step-from-result>
+  </div>
+  <div *ngSwitchDefault>
+    no such component
+  </div>
+</ng-container>
+<button (click)="nextStep()">next </button>
+<button (click)="PreveiousStep()">Previous  </button>
