@@ -10,6 +10,7 @@ import {
 import { SharedModule } from '@fintranet/share';
 import { HomeRoutingModule } from './home-routing.module';
 import { StepperFormHandlerService } from './services';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { StepperFormHandlerService } from './services';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   providers:[

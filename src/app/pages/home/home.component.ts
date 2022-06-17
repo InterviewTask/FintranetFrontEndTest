@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { StepperFormHandlerService } from './services';
 
 @Component({
@@ -6,8 +8,10 @@ import { StepperFormHandlerService } from './services';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  activeIndex:number;
+export class HomeComponent implements OnInit,OnDestroy {
+  activeIndex!:number;
+  subscription: Subscription[]=[];
+  form!:FormGroup;
   stepsModel = [
     { label: 'Upload Image' },
     { label: 'Form' },
@@ -15,13 +19,36 @@ export class HomeComponent implements OnInit {
     { label: 'Confirmation' }
   ]
   constructor(
-    private stepperFormHandler: StepperFormHandlerService
+    private stepperFormHandler: StepperFormHandlerService,
+    private fb:FormBuilder
   )
-  {
-    this.activeIndex=stepperFormHandler.activeIndex
+  { }
+  createForm(){
+    this.form = this.fb.group({
+      image:[],
+      amount:[],
+      date :[],
+      status :[],
+      SourceOfFund:[],
+      user:[]
+    })
   }
-
+  getSteperFormActiveIndex(){
+    return this.stepperFormHandler.activeIndex.subscribe((index:number)=>{
+      this.activeIndex=index;
+    })
+  }
+  ngOnDestroy(): void {
+    this.subscription.forEach(sub=>sub.unsubscribe())
+  }
   ngOnInit(): void {
+    this.subscription.push(this.getSteperFormActiveIndex())
+  }
+  nextStep(){
+    this.stepperFormHandler.next();
+  }
+  PreveiousStep(){
+    this.stepperFormHandler.pevious();
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-step-from-result',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./step-from-result.component.scss']
 })
 export class StepFromResultComponent implements OnInit {
-
+  @Input() form?:FormGroup
   constructor() { }
 
   ngOnInit(): void {
