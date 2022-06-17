@@ -21,7 +21,11 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@fintranet/share":["src/app/shared/index.ts"],
+      "@fintranet/core":["src/app/core/index.ts"],
+  }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
