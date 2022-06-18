@@ -9,7 +9,7 @@ import {
 } from './components'
 import { SharedModule } from '@fintranet/share';
 import { HomeRoutingModule } from './home-routing.module';
-import { StepperFormHandlerService } from './services';
+import { StepperFormHandlerService, UsersService } from './services';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -30,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
 
   ],
   providers:[
-    StepperFormHandlerService
+    StepperFormHandlerService,
+    UsersService
   ]
 })
 export class HomeModule { }
