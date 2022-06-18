@@ -9,7 +9,7 @@ import { FormGroup } from '@angular/forms';
 export class StepFromResultComponent implements OnInit {
   @Input() form?: FormGroup
   data: any;
-  path = ''
+  path = 'assets/image/defult.png'
   constructor() { }
 
   ngOnInit(): void {

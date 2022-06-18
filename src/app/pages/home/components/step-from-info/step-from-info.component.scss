@@ -1,14 +1,15 @@
-.sizes {
-  .p-inputtext {
-      display: block;
-      margin-bottom: .5rem;
-
-      &:last-child {
-          margin-bottom: 0;
+.form-info{
+  form{
+   .field{
+    margin: 10px;
+      label{
+        margin-bottom: 5px;
+        display: block;
       }
-  }
-}
+      .form-control{
+        width: 236px;
+      }
 
-.p-field * {
-  display: block;
+   }
+  }
 }

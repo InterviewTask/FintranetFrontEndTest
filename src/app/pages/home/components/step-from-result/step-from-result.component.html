@@ -1,2 +1,51 @@
-<img [src]="path" />
-{{this.form?.value | json}}
+<p-card class="show-result">
+  <p-divider>
+    <span class="title">User image </span>
+  </p-divider>
+
+  <img [src]="path" width="300px" height="300px" />
+  <div class="form-data-wrapper">
+    <div class="form-data-group">
+      <p-divider>
+        <span class="title">From Data </span>
+      </p-divider>
+      <div class="form-item">
+        <div class="lable">Amount:</div>
+        <div class="content">{{ data.amount }}</div>
+      </div>
+      <div class="form-item">
+        <div class="lable">Date:</div>
+        <div class="content">{{ data.date }}</div>
+      </div>
+      <div class="form-item">
+        <div class="lable">Status:</div>
+        <div class="content">{{ data.status?.name }}</div>
+      </div>
+      <div class="form-item">
+        <div class="lable">Source Of Fund:</div>
+        <div class="content">{{ data.SourceOfFund }}</div>
+      </div>
+    </div>
+    <div class="form-data-group">
+      <p-divider>
+        <span class="title">Selected User </span>
+      </p-divider>
+      <div class="form-item">
+        <div class="lable">Name:</div>
+        <div class="content">{{ data.user?.name }}</div>
+      </div>
+      <div class="form-item">
+        <div class="lable">Code:</div>
+        <div class="content">{{ data.user?.code }}</div>
+      </div>
+      <div class="form-item">
+        <div class="lable">Email:</div>
+        <div class="content">{{ data.user?.email }}</div>
+      </div>
+      <div class="form-item">
+        <div class="lable">Address:</div>
+        <div class="content">{{ data.user?.address }}</div>
+      </div>
+    </div>
+  </div>
+</p-card>

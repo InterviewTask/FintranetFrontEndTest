@@ -1,0 +1,25 @@
+.show-result {
+  .form-data-wrapper {
+    display: flex;
+    justify-content:space-between ;
+    .form-data-group {
+      width: 48%;
+      .form-item {
+        margin-top: 10px;
+        .lable {
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .content {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  p-divider {
+    width: 50%;
+    .title {
+      font-weight: bold;
+    }
+  }
+}
