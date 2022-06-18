@@ -14,7 +14,7 @@ export class StepFromResultComponent implements OnInit {
 
   ngOnInit(): void {
     this.data = this.form?.value;
-    if (this.data.image) {
+    if (this.data?.image) {
       this.createImage(this.data.image);
     }
   }

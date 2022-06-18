@@ -16,7 +16,7 @@ export class StepImageUploadComponent  implements OnInit {
    this.addFileToUploader();
   }
   addFileToUploader(){
-    if(this.form.get('image')?.value) {
+    if(this.form?.get('image')?.value) {
       this.externalFiles.push(this.form.get('image')?.value);
       }
   }
