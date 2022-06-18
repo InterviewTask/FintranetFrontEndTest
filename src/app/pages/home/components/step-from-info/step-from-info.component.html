@@ -1,1 +1,59 @@
-<p>step-from-info works!</p>
+<div class="form-info">
+  <div class="title">
+    <span>Info</span>
+  </div>
+  <form [formGroup]="form">
+    <div class="field">
+      <label for="amount" class="block">Valid Amount</label>
+      <input
+        id="amount"
+        type="username"
+        formControlName="amount"
+        aria-describedby="ValidAmount-help"
+        class="ng-invalid ng-dirty"
+        pKeyFilter="int"
+        pInputText
+      />
+      <small id="ValidAmount-help" class="p-error block"
+        >Amount is not available.</small
+      >
+    </div>
+    <div class="field">
+      <label for="icon">Icon</label>
+      <p-calendar
+        formControlName="date"
+        [minDate]="minDay"
+        [maxDate]="maxDay"
+        [showIcon]="true"
+        inputId="icon"
+      ></p-calendar>
+    </div>
+    <div class="field">
+      <label>Status </label>
+      <p-dropdown
+        [options]="options"
+        formControlName="status"
+        optionLabel="name"
+      >
+        <ng-template let-stat pTemplate="item">
+          <div>{{ stat.name }}</div>
+        </ng-template>
+      </p-dropdown>
+    </div>
+    <div class="field">
+      <label for="SourceOfFund" class="block">Source of fund </label>
+      <input
+        id="SourceOfFund"
+        type="username"
+        formControlName="SourceOfFund"
+        aria-describedby="SourceOfFund-help"
+        class="ng-invalid ng-dirty"
+        pKeyFilter="alpha"
+        pInputText
+      />
+      <small id="SourceOfFund-help" class="p-error block"
+        >SourceOfFund is not available.</small
+      >
+    </div>
+  </form>
+</div>

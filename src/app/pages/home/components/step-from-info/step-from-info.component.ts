@@ -7,10 +7,35 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./step-from-info.component.scss']
 })
 export class StepFromInfoComponent implements OnInit {
-  @Input() form?:FormGroup
+  @Input() form!: FormGroup
+  options =[
+   {
+    name:'optin1',
+    value: '1',
+  }
+  ,{
+    name:'optin2',
+    value: '2',
+  }
+  ,{
+    name:'optin3',
+    value: '3',
+  }
+  ,{
+    name:'optin4',
+    value: '4',
+  }
+]
+  minDay = this.fromToday(1);
+  maxDay = this.fromToday(5);
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  fromToday(day: number) {
+    const today = new Date();
+    return new Date(today.setDate(today.getDate() + day));
+  }
 }
