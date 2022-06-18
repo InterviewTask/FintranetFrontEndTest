@@ -6,7 +6,7 @@ const Components = [];
 const Pipes = [];
 const Directive = [];
 const Modules= [
-  PrimeShareModule
+  PrimeShareModule,
 ]
 
 @NgModule({
