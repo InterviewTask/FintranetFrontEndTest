@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { StepperFormHandlerService } from './services';
 
@@ -25,12 +25,12 @@ export class HomeComponent implements OnInit,OnDestroy {
   { }
   createForm(){
     this.form = this.fb.group({
-      image:[],
-      amount:[],
-      date :[],
-      status :[],
-      SourceOfFund:[],
-      user:[]
+      image:[null,[]],
+      amount:[null,[Validators.pattern(/^[0-9]*$/)]],
+      date :[null,[Validators.required]],
+      status :[null,[Validators.required]],
+      SourceOfFund:[null,[Validators.required]],
+      user:[null,[]],
     })
   }
   getSteperFormActiveIndex(){

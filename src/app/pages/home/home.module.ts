@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     SharedModule,
     HttpClientModule,
+
   ],
   providers:[
     StepperFormHandlerService
